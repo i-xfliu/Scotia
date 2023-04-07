@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.example.scotia.viewModel.main.MainViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:padding="@dimen/small_margin"
+                  android:orientation="vertical"
+                  tools:context=".ui.activity.MainActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tv_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="@color/input_text_color"
+                    app:hintTextColor="@color/input_text_color"
+                    app:layout_constraintRight_toLeftOf="@+id/btn_search"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:id="@+id/et_input"
+                        android:hint="@string/enter_user_id"
+                        android:inputType="text"
+                        android:minWidth="@dimen/user_name_input"
+                        android:text="@={viewModel.userInput}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                    android:onClick="@{viewModel::onClickSearch}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_search"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/search_button_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_input"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_input"
+                    android:text="search"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/spin_kit"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/input_text_color" />
+        <com.example.scotia.view.main.custom.RoundImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="@dimen/avatar_width"
+                android:layout_height="@dimen/avatar_height"
+                android:layout_marginTop="@dimen/mid_margin"
+                android:layout_gravity="center_horizontal"
+                app:imageUrl="@{viewModel.avatarUrl}"/>
+
+        <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.userId}"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/image_margin"
+        />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/light_margin"
+                android:id="@+id/rv_repos"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+        />
+
+    </LinearLayout>
+</layout>

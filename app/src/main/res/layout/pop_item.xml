@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+                name="viewModel"
+                type="com.example.scotia.viewModel.main.RepoViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/white"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_height="@dimen/height_card"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="@dimen/width_card">
+
+            <TextView
+                    android:id="@+id/tv_update_title"
+                    android:text="@string/last_update"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/detail_title_text"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:textColor="@color/cardview_dark_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tv_last_update"
+                    android:text="@={viewModel.update}"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textSize="@dimen/detail_text"
+                    app:layout_constraintTop_toBottomOf="@id/tv_update_title"/>
+
+            <TextView
+                    android:id="@+id/tv_star_title"
+                    android:text="@string/stars"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/detail_title_text"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:textColor="@color/cardview_dark_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_last_update"/>
+
+            <TextView
+                    android:id="@+id/tv_stars"
+                    android:text="@={viewModel.stars}"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/detail_text"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_star_title"/>
+            <TextView
+                    android:id="@+id/tv_forks_title"
+                    android:text="@string/forks"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/detail_title_text"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/cardview_dark_background"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_stars"/>
+            <TextView
+                    android:id="@+id/tv_forks"
+                    android:text="@={viewModel.forks}"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/detail_text"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_forks_title"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
