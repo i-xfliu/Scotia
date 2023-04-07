@@ -27,8 +27,8 @@ I made a demo video for it. Pls check the link above.
 ## ScreenShot
 
 <div align="center">
-    <img src="./main1.png" width="30%" height="50%"/> <img src="./main2.png" width="30%" height="50%"/> 
-<img src="./main3.png" width="30%" height="50%"/>
+    <img src="https://github.com/i-xfliu/Scotia/blob/main/main1.png" width="30%" height="50%"/> <img src=".https://github.com/i-xfliu/Scotia/blob/main/main2.png" width="30%" height="50%"/> 
+<img src="https://github.com/i-xfliu/Scotia/blob/main/main3.png" width="30%" height="50%"/>
 </div>
 
 
